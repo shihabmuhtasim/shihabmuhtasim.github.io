@@ -9,9 +9,9 @@ const CV = () => {
         My CV
       </h2>
       <a 
-        href="src/assets/CV_May25.pdf" 
+        href="/CV.pdf" 
         className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-md transition-colors duration-300 transform hover:scale-105"
-        download="Resume november.pdf"
+        download="Resume Shihab Muhtasim.pdf"
       >
         VIEW CV
       </a>

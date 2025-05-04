@@ -9,7 +9,7 @@ const ResearchObjective = () => {
         Research Objective
       </h2>
       <p className="text-lg text-gray-700 leading-relaxed">
-        My research experiences are in Natural Language Processing (NLP), Machine Learning (ML), Network Science, and Data Science. I am also eager to explore diverse research fields, leveraging my strong foundation in computer science and engineering.
+        My future research intrests are in Computer Vision, Image & Signal processing as well as sections of Visual AI. My research experiences are in Natural Language Processing (NLP), Machine Learning (ML), Network Science, and Data Science. I am also eager to explore diverse research fields, leveraging my strong foundation in computer science and engineering.
       </p>
     </section>
   );

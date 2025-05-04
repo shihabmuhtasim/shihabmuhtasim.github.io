@@ -6,8 +6,9 @@ const WorkExperience = () => {
     {
       title: 'Adjunct Lecturer',
       company: 'Department of Computer Science Engineering, BRAC University',
-      period: 'Feb. 2023 – Present',
-      description: 'Teaching advanced and core courses such as Data Structures, OOP, OS, Microprocessors, and AI; taking 21 hours of lab each week and providing 6 hours of consultation; checking assignments; conducting exams; taking vivas; and invigilating exams.'
+      period: 'Feb. 2025 – Present',
+      description: 'Teaching advanced and core courses such as Data Structures, OOP, OS, Microprocessors, and AI; taking 21 hours of lab each week and providing 6 hours of consultation; checking assignments; conducting exams; taking vivas; and invigilating exams.',
+      link: 'https://cse.sds.bracu.ac.bd/faculty_profile/419/shihab_muhtasim'
     },
     {
       title: 'Teaching Assistant',
@@ -24,18 +25,7 @@ const WorkExperience = () => {
       link: 'https://drive.google.com/file/d/1eHc4XYQyxhYFn33Dh1wAjq4xDZdLJKuX/view?usp=drive_link'
     },
     
-    // {
-    //   title: 'Project ORKO, BRAC University',
-    //   company: 'Committee Member & Tutor',
-    //   period: '2022',
-    //   description: 'Selected as one of seven individuals from 1000 students to participate in the pilot program at BRAC University\'s Project ORKO. Involved in designing, developing, and contributing to training modules for the program.'
-    // },
-    // {
-    //   title: 'Hult Prize (2022-23), BRAC University',
-    //   company: 'Executive of Content Planning',
-    //   period: '2022-2023',
-    //   description: 'Produced the official theme song for Hult Prize, featured at official events. Managed audio content for Hult\'s marketing initiatives, overseeing mixing and mastering. Actively participated in the competition, advancing to the semi-finals.'
-    // }
+  
   ];
 
   return (
@@ -62,7 +52,7 @@ const WorkExperience = () => {
                   target="_blank" 
                   rel="noopener noreferrer"
                 >
-                  View Certificate
+                  {experience.title === 'Adjunct Lecturer' ? 'View University Profile' : 'View Certificate'}
                 </a>
               )}
             </div>

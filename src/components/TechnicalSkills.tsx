@@ -5,17 +5,17 @@ const TechnicalSkills = () => {
   const skillCategories = [
     {
       title: 'Programming Languages',
-      skills: 'Python, PHP, R, Assembly, C, C++, Java',
+      skills: 'Python, PHP, C, C++, R, Java, Assembly',
       icon: <Code className="w-5 h-5 text-blue-600" />
     },
     {
       title: 'Web Development',
-      skills: 'HTML, CSS, JavaScript, Laravel, SQL, React',
+      skills: 'HTML, CSS, Laravel, SQL, React, JavaScript, Node,js',
       icon: <Globe className="w-5 h-5 text-blue-600" />
     },
     {
       title: 'ML & NLP Libraries',
-      skills: 'NetworkX, TensorFlow, NLTK, Transformers, Keras, PyTorch, Pandas, Matplotlib, NumPy, Scikit-learn, Seaborn',
+      skills: 'NetworkX, TensorFlow, NLTK, OpenCV, Transformers, Keras, PyTorch, Pandas, Matplotlib, NumPy, Scikit-learn, Seaborn',
       icon: <Database className="w-5 h-5 text-blue-600" />
     },
     {
@@ -24,18 +24,18 @@ const TechnicalSkills = () => {
       icon: <GitBranch className="w-5 h-5 text-blue-600" />
     },
     {
-      title: 'Software Development',
+      title: 'Development Tools',
       skills: 'OpenGL, Object-Oriented Programming, Tkinter, Latex',
       icon: <Cpu className="w-5 h-5 text-blue-600" />
     },
     {
       title: 'Technical Tools',
-      skills: 'Anaconda, Proteus, LT Spice, MS Word, PowerPoint, Excel, Adobe Lightroom, Quartus, DHCL',
+      skills: 'Anaconda, Proteus, VScode, LT Spice, MS Word, PowerPoint, Excel, Adobe Lightroom, Quartus, DHCL',
       icon: <Tool className="w-5 h-5 text-blue-600" />
     },
     {
       title: 'Music and Media',
-      skills: 'FL Studio, Wondershare Filmora, Adobe Premiere Pro',
+      skills: 'FL Studio, Davinci Resolve, Wondershare Filmora',
       icon: <Music className="w-5 h-5 text-blue-600" />
     }
   ];

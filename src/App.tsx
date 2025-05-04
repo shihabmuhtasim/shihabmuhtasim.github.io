@@ -17,6 +17,10 @@ import Footer from './components/Footer';
 import ResearchObjective from './components/ResearchObjective';
 import CV from './components/CV';
 import Projects from './components/Projects';
+import LifeUpdates from './components/LifeUpdates';
+import HobbiesMusic from './components/HobbiesMusic'; 
+import ContactMe from './components/ContactMe';
+
 import './index.css';
 
 function App() {
@@ -32,22 +36,25 @@ function App() {
               <div id="main">
                 <Header />
                 <AboutMe />
-                <ResearchObjective />
                 <Education />
                 <WorkExperience />
-                
                 <Achievements />
                 <ResearchInterests />
+                <ResearchObjective />
                 <ExtraCurricular />
                 <TechnicalSkills />
-                <Certifications />
-                
                 <TestScores />
+                <Certifications />  
                 <EducationHistory />
                 <CV />
               </div>
             } />
             <Route path="/projects" element={<Projects />} />
+
+            <Route path="/LifeUpdates" element={<LifeUpdates/>} />
+
+            <Route path="/hobbies-music" element={<HobbiesMusic />} />
+            <Route path="/contact-me" element={<ContactMe />} />
           </Routes>
           
           <Footer />
