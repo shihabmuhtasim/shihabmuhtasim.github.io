@@ -1,5 +1,6 @@
 import React from 'react';
 import { MapPin, Mail, Linkedin, Github, FileText } from 'lucide-react';
+import { FaHackerrank, FaAddressBook } from 'react-icons/fa';
 
 const Footer = () => {
   return (
@@ -10,7 +11,6 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="text-xl font-bold mb-4 border-b border-gray-700 pb-2">Email</h3>
             <p className="flex items-center">
-              <Mail className="w-5 h-5 mr-2 text-blue-400" />
               shihabmuhtasim.cs@gmail.com
             </p>
           </div>
@@ -44,22 +44,23 @@ const Footer = () => {
                   <Github className="w-6 h-6" />
                 </a>
               </li>
-              <li>
-                <a 
-                  href="https://sayhi.bio/Shihab-Muhtasim" 
-                  className="text-gray-300 hover:text-blue-400 transition-colors"
-                  aria-label="Contact"
-                >
-                  <FileText className="w-6 h-6" />
-                </a>
-              </li>
+              
               <li>
                 <a 
                   href="https://www.hackerrank.com/profile/shihabmuhtasim" 
                   className="text-gray-300 hover:text-blue-400 transition-colors"
                   aria-label="HackerRank"
                 >
-                  <span className="icon brands fa-hackerrank"></span>
+                  <FaHackerrank className="w-6 h-6" />
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="https://sayhi.bio/Shihab-Muhtasim" 
+                  className="text-gray-300 hover:text-blue-400 transition-colors"
+                  aria-label="Say Hi Contact Info"
+                >
+                  <FaAddressBook className="w-6 h-6" />
                 </a>
               </li>
             </ul>

@@ -21,11 +21,14 @@ import LifeUpdates from './components/LifeUpdates';
 import HobbiesMusic from './components/HobbiesMusic'; 
 import ContactMe from './components/ContactMe';
 
+import ScrollToTop from './components/ScrollToTop';
+
 import './index.css';
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="min-h-screen bg-gray-100">
         <div id="wrapper" className="fade-in">
           <Intro />

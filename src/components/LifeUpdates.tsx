@@ -87,16 +87,16 @@ const LifeUpdates = () => {
               </div>
             )}
             {item.imageUrl2 && (
-              <div className="flex justify-center gap-4">
+              <div className="flex flex-col md:flex-row justify-center items-center gap-4 w-full overflow-hidden">
                 <img
                   src={item.imageUrl}
                   alt={item.title}
-                  className="w-full md:max-w-md h-72 object-cover rounded-lg mb-4"
+                  className="h-64 w-auto md:h-64 md:w-80 object-cover rounded-lg"
                 />
                 <img
                   src={item.imageUrl2}
                   alt={item.title + ' second'}
-                  className="w-full md:max-w-md h-72 object-cover rounded-lg mb-4"
+                  className="h-64 w-auto md:h-64 md:w-80 object-cover rounded-lg"
                 />
               </div>
             )}

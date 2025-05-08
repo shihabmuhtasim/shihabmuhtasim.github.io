@@ -1,9 +1,18 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Linkedin, Github, Menu, X } from 'lucide-react';
+import { FaHackerrank, FaAddressBook } from 'react-icons/fa';
+import { useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const location = useLocation();
+
+  useEffect(() => {
+    setIsOpen(false); // Close dropdown menu on route change
+  }, [location.pathname]);
 
   return (
     <nav id="nav" className="bg-gray-800 text-white p-4 sticky top-0 z-10 shadow-md">
@@ -22,20 +31,20 @@ const Navigation = () => {
         <div className={`${isOpen ? 'block' : 'hidden'} w-full md:flex md:items-center md:w-auto`}>
           <ul className="links flex flex-col items-center md:flex-row md:space-x-4 mb-4 md:mb-0 md:items-start">
             <li>
-              <Link to="/" className="block px-4 py-2 hover:text-blue-400 transition-colors">About Me</Link>
+              <Link to="/" onClick={() => setIsOpen(false)} className="block px-4 py-2 hover:text-blue-400 transition-colors">About Me</Link>
             </li>
             <li>
-              <Link to="/projects" className="block px-4 py-2 hover:text-blue-400 transition-colors">My Projects</Link>
+              <Link to="/projects" onClick={() => setIsOpen(false)} className="block px-4 py-2 hover:text-blue-400 transition-colors">My Projects</Link>
             </li>
             <li>
-              <Link to="/LifeUpdates" className="block px-4 py-2 hover:text-blue-400 transition-colors">Life Updates</Link>
+              <Link to="/LifeUpdates" onClick={() => setIsOpen(false)} className="block px-4 py-2 hover:text-blue-400 transition-colors">Life Updates</Link>
             </li>
 
             <li>
-              <Link to="/hobbies-music" className="block px-4 py-2 hover:text-blue-400 transition-colors">Hobby</Link>
+              <Link to="/hobbies-music" onClick={() => setIsOpen(false)} className="block px-4 py-2 hover:text-blue-400 transition-colors">Hobby</Link>
             </li>
             <li>
-              <Link to="/contact-me" className="block px-4 py-2 hover:text-blue-400 transition-colors">Contact Me</Link>
+              <Link to="/contact-me" onClick={() => setIsOpen(false)} className="block px-4 py-2 hover:text-blue-400 transition-colors">Contact Me</Link>
             </li>
           </ul>
           <ul className="icons flex flex-col items-center md:flex-row md:space-x-4">
@@ -49,9 +58,15 @@ const Navigation = () => {
                 <Github className="w-5 h-5" />
               </a>
             </li>
+            
             <li>
               <a href="https://www.hackerrank.com/profile/shihabmuhtasim" className="block px-4 py-2 hover:text-blue-400 transition-colors" aria-label="HackerRank">
-                <span className="icon brands fa-hackerrank"></span>
+                <FaHackerrank className="w-5 h-5" />
+              </a>
+            </li>
+            <li>
+              <a href="https://sayhi.bio/Shihab-Muhtasim" className="block px-4 py-2 hover:text-blue-400 transition-colors" aria-label="Say Hi Contact Info">
+                <FaAddressBook className="w-5 h-5" />
               </a>
             </li>
           </ul>

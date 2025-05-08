@@ -24,7 +24,7 @@ const ContactMe = () => {
         'service_em623n6',
         'template_6emp70g',
         {
-          from_email: formData.email,
+          email: formData.email,
           subject: formData.subject,
           message: formData.message,
         },
@@ -39,11 +39,7 @@ const ContactMe = () => {
             subject: '',
             message: '',
           });
-          setTimeout(() => {
-            setSuccess(false);
-            window.location.reload();
-          }, 3000);
-          alert('Message sent successfully!');
+          window.location.replace('https://shihabmuhtasim.github.io');
         },
         (err) => {
           console.error('FAILED...', err);
@@ -65,7 +61,7 @@ const ContactMe = () => {
           <label className="block font-medium">Your Email</label>
           <input
             type="email"
-            name="from_email"
+            name="email"
             required
             className="w-full p-2 border border-gray-300 rounded"
             onChange={handleChange}
