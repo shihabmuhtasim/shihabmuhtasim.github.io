@@ -5,12 +5,13 @@ const Achievements = () => {
   const achievements = [
     {
       title: 'Erasmus Mundus Scholar',
-      description: 'Selected for four master\'s programs across Europe, all under a fully funded Erasmus Mundus Plus scholarships. One student from Bangladesh and fewer than 20 students worldwide were chosen for these awards. ',
+      description: 'Selected for five master\'s programs across Europe, all under a fully funded Erasmus Mundus Plus scholarships. One student from Bangladesh and fewer than 20 students worldwide were chosen for these awards. ',
       links: [
         { name: 'IPCVAI', url: 'https://ipcv.eu/' },
         { name: 'EMJM Imaging', url: 'https://www.emjm-imaging.eu/' },
         { name: 'CoDas', url: 'https://www.unite-codas-master.eu/' },
-        { name: 'NuroData', url: 'https://www.neurodata-master.org/' }
+        { name: 'NuroData', url: 'https://www.neurodata-master.org/' },
+        { name: 'CYBERUS', url: 'https://master-cyberus.eu/' }
         
       ],
       icon: <Award className="w-6 h-6 text-yellow-500" />
@@ -30,6 +31,12 @@ const Achievements = () => {
     {
       title: 'Vice Chancellor\'s List',
       description: 'For obtaining a GPA of 4.0 in all semesters at BRAC University, I was added in the VC\' list.',
+      links: [],
+      icon: <Star className="w-6 h-6 text-yellow-500" />
+    },
+    {
+      title: 'PHD offer from Virginia Commonwealth University',
+      description: 'I received a PhD offer from Virginia Commonwealth University, USA, with a full scholarship.',
       links: [],
       icon: <Star className="w-6 h-6 text-yellow-500" />
     },
