@@ -11,6 +11,13 @@ const updates = [
     linkUrl: 'https://ipcv.eu/',
   },
   {
+    title: 'BRAC University Convocation 2025 | Valedictorian Speech 🎤',
+    date: '25 February 2025',
+    description:
+      'Chancellor’s Gold Medalist and Valedictorian, Mr. Shihab Muhtasim, delivers his speech at the graduation ceremony. He earned his Bachelor’s degree from the School of Data and Sciences with a CGPA of 4.00 in the Department of Computer Science and Engineering. His speech highlighted the power of perseverance, community, and staying curious in the ever-evolving world of technology.',
+    videoEmbed: 'https://www.youtube.com/embed/YoLNCLtIU-c',
+  },
+  {
     title: 'Graduation Day 🎓',
     date: '25 February 2024',
     description:
@@ -68,7 +75,19 @@ const LifeUpdates = () => {
               <p className="text-gray-700">{item.description}</p>
             </div>
             <div className="h-4"></div>
-            {item.imageUrl && !item.imageUrl2 && (
+            {item.videoEmbed && (
+              <div className="aspect-w-16 aspect-h-9">
+                <iframe
+                  className="w-full h-96 rounded-lg shadow-lg"
+                  src={item.videoEmbed}
+                  title={item.title}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
+            )}
+            {!item.videoEmbed && item.imageUrl && !item.imageUrl2 && (
               <div className="flex justify-center">
                 {item.linkUrl ? (
                   <a href={item.linkUrl} target="_blank" rel="noopener noreferrer">
@@ -87,7 +106,7 @@ const LifeUpdates = () => {
                 )}
               </div>
             )}
-            {item.imageUrl2 && (
+            {!item.videoEmbed && item.imageUrl2 && (
               <div className="flex flex-col md:flex-row justify-center items-center gap-4 w-full overflow-hidden">
                 {item.linkUrl ? (
                   <>
@@ -124,28 +143,6 @@ const LifeUpdates = () => {
             )}
           </div>
         ))}
-      </div>
-
-      <div className="mt-4 mb-10">
-        <h3 className="text-xl font-semibold text-gray-800 mb-4">
-          BRAC University Convocation 2025 | Speech of the Valedictorian
-        </h3>
-        <p className="mt-4 text-gray-700">
-        Chancellor’s Gold Medalist and Valedictorian, Mr. Shihab Muhtasim, delivers his speech at the graduation ceremony.
-        He earned his Bachelor’s degree from the School of Data and Sciences with a CGPA of 4.00 in the Department of Computer Science and Engineering.
-        His speech highlighted the power of perseverance, community, and staying curious in the ever-evolving world of technology.
-      </p>
-      <div className="h-8"></div>
-        <div className="aspect-w-16 aspect-h-9">
-          <iframe
-            className="w-full h-96 rounded-lg shadow-lg"
-            src="https://www.youtube.com/embed/YoLNCLtIU-c"
-            title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
-        </div>
       </div>
     </section>
   );
