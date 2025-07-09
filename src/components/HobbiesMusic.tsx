@@ -49,6 +49,15 @@ const HobbiesMusic = () => {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           ></iframe>
+          
+          <iframe
+            className="w-full h-64 rounded-lg shadow-md"
+            src="https://www.youtube.com/embed/7xbloYB6ke0"
+            
+            title="Neon Mist"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
           <iframe
             className="w-full h-64 rounded-lg shadow-md"
             src="https://www.youtube.com/embed/uz-3hq3CrhQ"

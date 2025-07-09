@@ -3,6 +3,14 @@ import { Newspaper } from 'lucide-react';
 
 const updates = [
   {
+    title: 'Erasmus Mundus Scholarship | IPCVAI Program 🎉',
+    date: 'September 2025 - August 2027',
+    description:
+      'Excited to share that I’ve been awarded the Erasmus Mundus Joint Master’s Scholarship for five different programs. I have finally choosen the IPCVAI program (Artificial Intelligence for Image Processing and Computer Vision) for my masters! This two-year journey will take me across Hungary, Spain, and France — starting in Budapest, then Madrid, and finally Bordeaux followed by an internship that can be done anywhere in the world. It’s an incredible opportunity to dive deep into computer vision and AI while experiencing the cultural richness of Europe. This fully funded scholarship covers tuition, travel, installation, and living expenses.  Grateful for the support and looking forward to what lies ahead! ',
+    imageUrl: '/ipclogo.jpg',
+    linkUrl: 'https://ipcv.eu/',
+  },
+  {
     title: 'Graduation Day 🎓',
     date: '25 February 2024',
     description:
@@ -40,6 +48,84 @@ const LifeUpdates = () => {
         Life Updates
       </h2>
 
+      <div className="space-y-10">
+        {updates.map((item, index) => (
+          <div
+            key={index}
+            className="flex flex-col bg-gray-50 p-4 rounded-lg shadow-sm"
+          >
+            <div>
+              {item.linkUrl ? (
+                <a href={item.linkUrl} target="_blank" rel="noopener noreferrer">
+                  <h3 className="text-xl font-semibold text-gray-800">{item.title}</h3>
+                </a>
+              ) : (
+                <h3 className="text-xl font-semibold text-gray-800">{item.title}</h3>
+              )}
+              {item.date && (
+                <p className="text-sm text-gray-500 mb-2">{item.date}</p>
+              )}
+              <p className="text-gray-700">{item.description}</p>
+            </div>
+            <div className="h-4"></div>
+            {item.imageUrl && !item.imageUrl2 && (
+              <div className="flex justify-center">
+                {item.linkUrl ? (
+                  <a href={item.linkUrl} target="_blank" rel="noopener noreferrer">
+                    <img
+                      src={item.imageUrl}
+                      alt={item.title}
+                      className="w-full md:max-w-2xl h-auto object-contain rounded-lg mb-4"
+                    />
+                  </a>
+                ) : (
+                  <img
+                    src={item.imageUrl}
+                    alt={item.title}
+                    className="w-full md:max-w-2xl h-auto object-contain rounded-lg mb-4"
+                  />
+                )}
+              </div>
+            )}
+            {item.imageUrl2 && (
+              <div className="flex flex-col md:flex-row justify-center items-center gap-4 w-full overflow-hidden">
+                {item.linkUrl ? (
+                  <>
+                    <a href={item.linkUrl} target="_blank" rel="noopener noreferrer">
+                      <img
+                        src={item.imageUrl}
+                        alt={item.title}
+                        className="h-64 w-auto md:h-64 md:w-80 object-cover rounded-lg"
+                      />
+                    </a>
+                    <a href={item.linkUrl} target="_blank" rel="noopener noreferrer">
+                      <img
+                        src={item.imageUrl2}
+                        alt={item.title + ' second'}
+                        className="h-64 w-auto md:h-64 md:w-80 object-cover rounded-lg"
+                      />
+                    </a>
+                  </>
+                ) : (
+                  <>
+                    <img
+                      src={item.imageUrl}
+                      alt={item.title}
+                      className="h-64 w-auto md:h-64 md:w-80 object-cover rounded-lg"
+                    />
+                    <img
+                      src={item.imageUrl2}
+                      alt={item.title + ' second'}
+                      className="h-64 w-auto md:h-64 md:w-80 object-cover rounded-lg"
+                    />
+                  </>
+                )}
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+
       <div className="mt-4 mb-10">
         <h3 className="text-xl font-semibold text-gray-800 mb-4">
           BRAC University Convocation 2025 | Speech of the Valedictorian
@@ -60,48 +146,6 @@ const LifeUpdates = () => {
             allowFullScreen
           ></iframe>
         </div>
-      </div>
-      
-
-      <div className="space-y-10">
-        {updates.map((item, index) => (
-          <div
-            key={index}
-            className="flex flex-col bg-gray-50 p-4 rounded-lg shadow-sm"
-          >
-            <div>
-              <h3 className="text-xl font-semibold text-gray-800">{item.title}</h3>
-              {item.date && (
-                <p className="text-sm text-gray-500 mb-2">{item.date}</p>
-              )}
-              <p className="text-gray-700">{item.description}</p>
-            </div>
-            <div className="h-4"></div>
-            {item.imageUrl && !item.imageUrl2 && (
-              <div className="flex justify-center">
-                <img
-                  src={item.imageUrl}
-                  alt={item.title}
-                  className="w-full md:max-w-2xl h-auto object-contain rounded-lg mb-4"
-                />
-              </div>
-            )}
-            {item.imageUrl2 && (
-              <div className="flex flex-col md:flex-row justify-center items-center gap-4 w-full overflow-hidden">
-                <img
-                  src={item.imageUrl}
-                  alt={item.title}
-                  className="h-64 w-auto md:h-64 md:w-80 object-cover rounded-lg"
-                />
-                <img
-                  src={item.imageUrl2}
-                  alt={item.title + ' second'}
-                  className="h-64 w-auto md:h-64 md:w-80 object-cover rounded-lg"
-                />
-              </div>
-            )}
-          </div>
-        ))}
       </div>
     </section>
   );
