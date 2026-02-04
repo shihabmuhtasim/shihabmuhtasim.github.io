@@ -12,6 +12,46 @@ interface Project {
 const Projects = () => {
   const projects: Project[] = [
     {
+      category: 'Machine Learning • Predictive Maintenance',
+      title: 'Prediction of APS Failure in Scania Trucks',
+      description:
+        'A predictive maintenance project that trains machine learning models to detect imminent Air Pressure System (APS) failures in Scania heavy-duty trucks using operational sensor data—focusing on early detection to reduce downtime and maintenance cost.',
+      imageUrl: '/aps-scania-cover.jpg',
+      githubUrl: 'https://github.com/shihabmuhtasim/Prediction-of-APS-Failure-in-Scania-Trucks',
+    },
+    {
+      category: 'Computer Vision • Image Processing',
+      title: 'Bingo Detection — Image Processing Model',
+      description:
+        'A MATLAB image-processing pipeline that analyzes Bingo card photos by correcting rotation, digitizing the grid, detecting stamped cells, and validating Bingo patterns using frequency-domain analysis and shape-based detection.',
+      imageUrl: '/bingo-detection-cover.jpg',
+      githubUrl: 'https://github.com/shihabmuhtasim/Bingo-Detection-Image-Processing-Model',
+    },
+    {
+      category: 'Software Engineering • Design Patterns',
+      title: 'PatternCraft — Design Patterns Portfolio',
+      description:
+        'A curated portfolio of clean, modular implementations of GoF (Gang of Four) design patterns, built as course work and structured around real-world inspired problems with extensible, maintainable solutions.',
+      imageUrl: '/patterncraft-cover.jpg',
+      githubUrl: 'https://github.com/shihabmuhtasim/Pattern-Craft---Design-Patterns',
+    },
+    {
+      category: 'Biomedical Signal Processing • ML',
+      title: 'Gait Analysis under Dual-Task Conditions',
+      description:
+        'An end-to-end BSP pipeline that processes smartphone accelerometer & gyroscope data to distinguish normal walking vs. cognitive dual-task walking. Includes filtering/resampling, feature engineering (time/frequency/biomarkers), and multiple ML classifiers.',
+      imageUrl: '/gait-dualtask-cover.jpg',
+      githubUrl: 'https://github.com/shihabmuhtasim/Gait-Analysis-under-Dual-Task-Conditions',
+    },
+    {
+      category: 'Computer Vision • Segmentation & Detection',
+      title: 'Drone Imagery — Texture Segmentation & Car Detection',
+      description:
+        'A computer vision project on aerial/drone imagery focusing on texture-based segmentation and vehicle detection, exploring classical and/or ML approaches for separating terrain regions and identifying cars from overhead views.',
+      imageUrl: '/drone-seg-car-cover.jpg',
+      githubUrl: 'https://github.com/shihabmuhtasim/Drone-Image-texture-segmentation-and-car-detection',
+    },
+    {
       category: 'Software Engineering',
       title: 'Rent Koro - Car rental website in Laravel',
       description: 'Rent Koro is a car rental website built in Laravel catering to different user roles: admin, vendor, general, and guest. Our platform facilitates the renting and listing of cars, providing a seamless rental experience.',

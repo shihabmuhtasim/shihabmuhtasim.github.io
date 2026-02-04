@@ -5,12 +5,14 @@ const ResearchInterests = () => {
   const interests = [
     'Computer Vision',
     'Image and Video Processing',
+    '3D Reconstruction',
     'Network Science',
     'Machine Learning (ML)',
     'Artificial Intelligence (AI)',
     'Natural Language Processing (NLP)',
     'Data Science',
-    'System Design'
+    'System Design',
+    'Deep Learning',
   ];
 
   return (

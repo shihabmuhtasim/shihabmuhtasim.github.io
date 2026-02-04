@@ -10,8 +10,6 @@ const Achievements = () => {
         { name: 'IPCVAI', url: 'https://ipcv.eu/' },
         { name: 'EMJM Imaging', url: 'https://www.emjm-imaging.eu/' },
         { name: 'CoDas', url: 'https://www.unite-codas-master.eu/' },
-        { name: 'NuroData', url: 'https://www.neurodata-master.org/' },
-        { name: 'CYBERUS', url: 'https://master-cyberus.eu/' }
         
       ],
       icon: <Award className="w-6 h-6 text-yellow-500" />

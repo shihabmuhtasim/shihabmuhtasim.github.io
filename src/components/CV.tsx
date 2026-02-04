@@ -13,7 +13,7 @@ const CV = () => {
         className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-md transition-colors duration-300 transform hover:scale-105"
         download="Resume Shihab Muhtasim.pdf"
       >
-        VIEW CV
+        VIEW CV of 2026 February 
       </a>
     </section>
   );

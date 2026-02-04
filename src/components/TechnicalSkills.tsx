@@ -5,7 +5,7 @@ const TechnicalSkills = () => {
   const skillCategories = [
     {
       title: 'Programming Languages',
-      skills: 'Python, PHP, C, C++, R, Java, Assembly',
+      skills: 'Python, PHP, Matlab, C, C++, R, Java, Assembly',
       icon: <Code className="w-5 h-5 text-blue-600" />
     },
     {

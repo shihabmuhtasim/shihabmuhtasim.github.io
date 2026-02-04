@@ -6,7 +6,7 @@ const WorkExperience = () => {
     {
       title: 'Adjunct Lecturer',
       company: 'Department of Computer Science Engineering, BRAC University',
-      period: 'Feb. 2025 – Present',
+      period: 'Feb. 2025 – June 2025',
       description: 'Teaching advanced and core courses such as Data Structures, OOP, OS, Microprocessors, and AI; taking 21 hours of lab each week and providing 6 hours of consultation; checking assignments; conducting exams; taking vivas; and invigilating exams.',
       link: 'https://cse.sds.bracu.ac.bd/faculty_profile/419/shihab_muhtasim'
     },
