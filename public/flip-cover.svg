@@ -1,0 +1,181 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 350">
+  <defs>
+    <linearGradient id="clipbg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#030712"/>
+      <stop offset="100%" style="stop-color:#0f172a"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#7c3aed;stop-opacity:0.18"/>
+      <stop offset="100%" style="stop-color:#030712;stop-opacity:0"/>
+    </radialGradient>
+    <!-- Grad-CAM heatmap gradient -->
+    <linearGradient id="heatH" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1d4ed8;stop-opacity:0.7"/>
+      <stop offset="40%" style="stop-color:#15803d;stop-opacity:0.7"/>
+      <stop offset="70%" style="stop-color:#ca8a04;stop-opacity:0.8"/>
+      <stop offset="100%" style="stop-color:#dc2626;stop-opacity:0.9"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="350" fill="url(#clipbg)"/>
+  <rect width="600" height="350" fill="url(#glow)"/>
+
+  <!-- ── Left: CLIP dual-encoder diagram ── -->
+  <g transform="translate(20, 30)">
+    <text x="85" y="-8" text-anchor="middle" font-family="monospace" font-size="8" fill="#64748b" letter-spacing="1.5">CLIP ARCHITECTURE</text>
+
+    <!-- Image encoder box -->
+    <rect x="0" y="5" width="72" height="88" rx="4" fill="#1e1b4b" stroke="#4f46e5" stroke-width="1.2"/>
+    <text x="36" y="24" text-anchor="middle" font-family="monospace" font-size="7.5" fill="#a5b4fc" font-weight="bold">Image</text>
+    <text x="36" y="35" text-anchor="middle" font-family="monospace" font-size="7.5" fill="#a5b4fc" font-weight="bold">Encoder</text>
+    <text x="36" y="48" text-anchor="middle" font-family="monospace" font-size="6.5" fill="#6366f1">ViT-B/32</text>
+    <!-- ViT patch grid (tiny) -->
+    <g transform="translate(10, 54)">
+      <rect x="0"  y="0" width="8" height="8" rx="1" fill="#312e81" stroke="#4f46e5" stroke-width="0.5"/>
+      <rect x="10" y="0" width="8" height="8" rx="1" fill="#312e81" stroke="#4f46e5" stroke-width="0.5"/>
+      <rect x="20" y="0" width="8" height="8" rx="1" fill="#3730a3" stroke="#4f46e5" stroke-width="0.5"/>
+      <rect x="30" y="0" width="8" height="8" rx="1" fill="#312e81" stroke="#4f46e5" stroke-width="0.5"/>
+      <rect x="40" y="0" width="8" height="8" rx="1" fill="#312e81" stroke="#4f46e5" stroke-width="0.5"/>
+      <rect x="0"  y="10" width="8" height="8" rx="1" fill="#3730a3" stroke="#4f46e5" stroke-width="0.5"/>
+      <rect x="10" y="10" width="8" height="8" rx="1" fill="#4338ca" stroke="#6366f1" stroke-width="0.5"/>
+      <rect x="20" y="10" width="8" height="8" rx="1" fill="#4338ca" stroke="#6366f1" stroke-width="0.7"/>
+      <rect x="30" y="10" width="8" height="8" rx="1" fill="#3730a3" stroke="#4f46e5" stroke-width="0.5"/>
+      <rect x="40" y="10" width="8" height="8" rx="1" fill="#312e81" stroke="#4f46e5" stroke-width="0.5"/>
+      <rect x="0"  y="20" width="8" height="8" rx="1" fill="#312e81" stroke="#4f46e5" stroke-width="0.5"/>
+      <rect x="10" y="20" width="8" height="8" rx="1" fill="#3730a3" stroke="#4f46e5" stroke-width="0.5"/>
+      <rect x="20" y="20" width="8" height="8" rx="1" fill="#312e81" stroke="#4f46e5" stroke-width="0.5"/>
+      <rect x="30" y="20" width="8" height="8" rx="1" fill="#312e81" stroke="#4f46e5" stroke-width="0.5"/>
+      <rect x="40" y="20" width="8" height="8" rx="1" fill="#1e1b4b" stroke="#4f46e5" stroke-width="0.5"/>
+    </g>
+
+    <!-- Text encoder box -->
+    <rect x="98" y="5" width="72" height="88" rx="4" fill="#052e16" stroke="#16a34a" stroke-width="1.2"/>
+    <text x="134" y="24" text-anchor="middle" font-family="monospace" font-size="7.5" fill="#86efac" font-weight="bold">Text</text>
+    <text x="134" y="35" text-anchor="middle" font-family="monospace" font-size="7.5" fill="#86efac" font-weight="bold">Encoder</text>
+    <text x="134" y="48" text-anchor="middle" font-family="monospace" font-size="6.5" fill="#16a34a">Transformer</text>
+    <!-- Tokenized text -->
+    <g transform="translate(108, 56)">
+      <rect x="0"  y="0" width="22" height="9" rx="2" fill="#14532d" stroke="#16a34a" stroke-width="0.5"/>
+      <text x="11" y="7" text-anchor="middle" font-family="monospace" font-size="5.5" fill="#86efac">[LEFT]</text>
+      <rect x="25" y="0" width="22" height="9" rx="2" fill="#14532d" stroke="#16a34a" stroke-width="0.5"/>
+      <text x="36" y="7" text-anchor="middle" font-family="monospace" font-size="5.5" fill="#86efac">[OF]</text>
+      <rect x="0"  y="12" width="22" height="9" rx="2" fill="#166534" stroke="#22c55e" stroke-width="0.5"/>
+      <text x="11" y="19" text-anchor="middle" font-family="monospace" font-size="5.5" fill="#bbf7d0">[THE]</text>
+      <rect x="25" y="12" width="22" height="9" rx="2" fill="#166534" stroke="#22c55e" stroke-width="0.5"/>
+      <text x="36" y="19" text-anchor="middle" font-family="monospace" font-size="5.5" fill="#bbf7d0">[CAR]</text>
+      <rect x="0"  y="24" width="48" height="9" rx="2" fill="#14532d" stroke="#16a34a" stroke-width="0.5"/>
+      <text x="24" y="31" text-anchor="middle" font-family="monospace" font-size="5.5" fill="#86efac">[/END]</text>
+    </g>
+
+    <!-- Feature vectors -->
+    <line x1="72" y1="49" x2="98" y2="49" stroke="#7c3aed" stroke-width="1.2" stroke-dasharray="3,2"/>
+    <circle cx="72"  cy="49" r="4" fill="#4f46e5"/>
+    <circle cx="98"  cy="49" r="4" fill="#16a34a"/>
+    <text x="85" y="46" text-anchor="middle" font-family="monospace" font-size="5.5" fill="#a78bfa">sim</text>
+    <text x="85" y="57" text-anchor="middle" font-family="monospace" font-size="5.5" fill="#a78bfa">cos</text>
+
+    <!-- Labels below -->
+    <text x="36" y="108" text-anchor="middle" font-family="monospace" font-size="7" fill="#6366f1">f(image)</text>
+    <text x="134" y="108" text-anchor="middle" font-family="monospace" font-size="7" fill="#16a34a">g(text)</text>
+  </g>
+
+  <!-- ── Middle: Spatial reasoning failure + Grad-CAM ── -->
+  <g transform="translate(225, 25)">
+    <text x="75" y="-8" text-anchor="middle" font-family="monospace" font-size="8" fill="#64748b" letter-spacing="1.5">GRAD-CAM ATTRIBUTION</text>
+
+    <!-- Scene image with objects -->
+    <rect x="0" y="0" width="150" height="120" rx="4" fill="#0c1a2e" stroke="#334155" stroke-width="1"/>
+
+    <!-- Object A (box/car) - left side of scene -->
+    <rect x="12" y="60" width="40" height="28" rx="2" fill="#1d4ed8" opacity="0.8"/>
+    <text x="32" y="78" text-anchor="middle" font-family="monospace" font-size="7" fill="#bfdbfe">Car A</text>
+
+    <!-- Object B (person) - right side -->
+    <ellipse cx="118" cy="55" rx="9" ry="9" fill="#374151"/>
+    <rect x="110" y="64" width="16" height="20" rx="2" fill="#4b5563"/>
+    <text x="118" y="95" text-anchor="middle" font-family="monospace" font-size="7" fill="#9ca3af">Person B</text>
+
+    <!-- Query text overlay -->
+    <rect x="4" y="4" width="142" height="14" rx="2" fill="#0f172a" opacity="0.9"/>
+    <text x="75" y="14" text-anchor="middle" font-family="monospace" font-size="7" fill="#f59e0b">"Is Car A to the left of Person B?"</text>
+
+    <!-- CLIP prediction badge -->
+    <rect x="4" y="103" width="60" height="13" rx="2" fill="#dc2626" opacity="0.8"/>
+    <text x="34" y="113" text-anchor="middle" font-family="monospace" font-size="7" fill="#fecaca">CLIP: FALSE ✗</text>
+    <rect x="88" y="103" width="58" height="13" rx="2" fill="#16a34a" opacity="0.8"/>
+    <text x="117" y="113" text-anchor="middle" font-family="monospace" font-size="7" fill="#bbf7d0">GT: TRUE ✓</text>
+
+    <!-- Grad-CAM overlay -->
+    <rect x="0" y="130" width="150" height="80" rx="4" fill="#0c1a2e" stroke="#334155" stroke-width="1"/>
+    <text x="75" y="148" text-anchor="middle" font-family="monospace" font-size="7" fill="#64748b">Grad-CAM Attention Map</text>
+    <!-- Heatmap blocks -->
+    <rect x="4"  y="154" width="30" height="50" rx="2" fill="#1d4ed8" opacity="0.7"/>
+    <rect x="36" y="158" width="25" height="42" rx="2" fill="#15803d" opacity="0.6"/>
+    <rect x="63" y="156" width="22" height="46" rx="2" fill="#ca8a04" opacity="0.7"/>
+    <rect x="87" y="154" width="28" height="50" rx="2" fill="#dc2626" opacity="0.75"/>
+    <rect x="117" y="158" width="29" height="42" rx="2" fill="#dc2626" opacity="0.85"/>
+    <!-- Heatmap overlay blend -->
+    <rect x="4" y="154" width="142" height="50" rx="2" fill="url(#heatH)" opacity="0.4"/>
+    <!-- Wrong attention highlight -->
+    <rect x="109" y="152" width="37" height="56" rx="2" fill="none" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="3,2"/>
+    <text x="127" y="218" text-anchor="middle" font-family="monospace" font-size="6.5" fill="#ef4444">Wrong focus</text>
+  </g>
+
+  <!-- ── Right: Failure analysis summary ── -->
+  <g transform="translate(408, 25)">
+    <text x="86" y="-8" text-anchor="middle" font-family="monospace" font-size="8" fill="#64748b" letter-spacing="1.5">FAILURE ANALYSIS</text>
+    <!-- 7 experiments list -->
+    <rect x="0" y="0" width="172" height="215" rx="4" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+
+    <text x="10" y="18" font-family="monospace" font-size="8" fill="#94a3b8">7 Structured Experiments</text>
+    <line x1="10" y1="24" x2="162" y2="24" stroke="#1e293b" stroke-width="0.8"/>
+
+    <!-- Experiment rows -->
+    <rect x="8" y="30" width="8" height="8" rx="1" fill="#dc2626" opacity="0.7"/>
+    <text x="22" y="38" font-family="monospace" font-size="7" fill="#cbd5e1">Spatial relation accuracy</text>
+
+    <rect x="8" y="44" width="8" height="8" rx="1" fill="#ea580c" opacity="0.7"/>
+    <text x="22" y="52" font-family="monospace" font-size="7" fill="#cbd5e1">Attention map analysis</text>
+
+    <rect x="8" y="58" width="8" height="8" rx="1" fill="#ca8a04" opacity="0.7"/>
+    <text x="22" y="66" font-family="monospace" font-size="7" fill="#cbd5e1">Layer-wise text embedding</text>
+
+    <rect x="8" y="72" width="8" height="8" rx="1" fill="#16a34a" opacity="0.7"/>
+    <text x="22" y="80" font-family="monospace" font-size="7" fill="#cbd5e1">Grad-CAM attribution</text>
+
+    <rect x="8" y="86" width="8" height="8" rx="1" fill="#0891b2" opacity="0.7"/>
+    <text x="22" y="94" font-family="monospace" font-size="7" fill="#cbd5e1">VSR dataset evaluation</text>
+
+    <rect x="8" y="100" width="8" height="8" rx="1" fill="#7c3aed" opacity="0.7"/>
+    <text x="22" y="108" font-family="monospace" font-size="7" fill="#cbd5e1">BLIP comparative eval</text>
+
+    <rect x="8" y="114" width="8" height="8" rx="1" fill="#4f46e5" opacity="0.7"/>
+    <text x="22" y="122" font-family="monospace" font-size="7" fill="#cbd5e1">Failure mode taxonomy</text>
+
+    <line x1="10" y1="130" x2="162" y2="130" stroke="#1e293b" stroke-width="0.8"/>
+
+    <!-- Model comparison bar chart -->
+    <text x="10" y="146" font-family="monospace" font-size="7.5" fill="#94a3b8">Accuracy on VSR Dataset</text>
+    <!-- CLIP bar -->
+    <rect x="10" y="152" width="78" height="11" rx="2" fill="#dc2626" opacity="0.8"/>
+    <text x="12" y="161" font-family="monospace" font-size="6.5" fill="#fecaca">CLIP    54.2%</text>
+    <!-- BLIP bar -->
+    <rect x="10" y="167" width="112" height="11" rx="2" fill="#16a34a" opacity="0.8"/>
+    <text x="12" y="176" font-family="monospace" font-size="6.5" fill="#bbf7d0">BLIP    77.8%</text>
+    <!-- Human bar -->
+    <rect x="10" y="182" width="152" height="11" rx="2" fill="#4f46e5" opacity="0.8"/>
+    <text x="12" y="191" font-family="monospace" font-size="6.5" fill="#c7d2fe">Human  96.0%</text>
+
+    <!-- Tag: BLIP vs CLIP -->
+    <rect x="8" y="200" width="156" height="10" rx="2" fill="#1e293b" opacity="0.7"/>
+    <text x="86" y="208" text-anchor="middle" font-family="monospace" font-size="6" fill="#64748b">CLIP shows systematic spatial failure</text>
+  </g>
+
+  <!-- Title bar -->
+  <rect x="0" y="255" width="600" height="95" fill="#030712" opacity="0.9"/>
+  <line x1="0" y1="256" x2="600" y2="256" stroke="#7c3aed" stroke-width="1" opacity="0.4"/>
+  <text x="30" y="283" font-family="'Courier New', monospace" font-size="13" font-weight="700" letter-spacing="1.5" fill="#e2e8f0">CLIP SPATIAL REASONING</text>
+  <text x="30" y="298" font-family="'Courier New', monospace" font-size="13" font-weight="700" letter-spacing="1.5" fill="#e2e8f0">EXPLAINABILITY &amp; FAILURE ANALYSIS</text>
+  <text x="30" y="316" font-family="'Courier New', monospace" font-size="8.5" fill="#475569">ViT-B/32  ·  Grad-CAM  ·  Visual Spatial Reasoning Dataset  ·  BLIP Comparison</text>
+  <text x="515" y="283" font-family="monospace" font-size="9" fill="#7c3aed" letter-spacing="1">CV · XAI</text>
+</svg>

@@ -45,30 +45,6 @@ const Achievements = () => {
       icon: <Award className="w-6 h-6 text-yellow-500" />
     },
     {
-      title: 'Thesis Distinction',
-      description: 'Achieved the highest grade of 99.56/100 for my undergraduate thesis.',
-      links: [],
-      icon: <Award className="w-6 h-6 text-yellow-500" />
-    },
-    {
-      title: 'Completed undergrad in 3.4 years',
-      description: 'Usually it takes 4 years or more to complete an undergraduate program, but I completed mine in 3.4 years by taking extra courses per semester.',
-      links: [],
-      icon: <Star className="w-6 h-6 text-yellow-500" />
-    },
-    {
-      title: 'Maintained a 100% attendance rate',
-      description: 'One of my personal achievements is maintaining a 100% attendance rate throughout my undergraduate program.',
-      links: [],
-      icon: <Star className="w-6 h-6 text-yellow-500" />
-    },
-    {
-      title: 'Won RS-59 Cup Runners up 2022, BRAC University',
-      description: '',
-      links: [],
-      icon: <Medal className="w-6 h-6 text-yellow-500" />
-    },
-    {
       title: 'Led my team to Semi-finals of Hult Prize 22-23, BRAC University',
       // description: 'Reached the semi-finals of the Hult Prize competition, which is a global competition for social entrepreneurship.',
       links: [{ name: 'Link', url: 'https://drive.google.com/file/d/1_LVTKOMEIob-dGjiv3-VKHP9vPlSFlXw/view?usp=drive_link' }],
