@@ -14,11 +14,27 @@ const Navigation = () => {
     setIsOpen(false); // Close dropdown menu on route change
   }, [location.pathname]);
 
+  const goToTop = () => {
+    setIsOpen(false);
+    if (location.pathname === '/') {
+      window.history.replaceState(null, '', window.location.pathname);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
   return (
     <nav id="nav" className="bg-gray-800 text-white p-4 sticky top-0 z-10 shadow-md">
-      <div className="container mx-auto flex flex-wrap items-center justify-center">
+      <div className="container mx-auto flex flex-wrap items-center justify-between gap-2">
         <div className="flex justify-between w-full md:w-auto items-center">
-          {/* <div className="text-lg font-semibold">Portfolio</div> */}
+          <Link
+            to="/"
+            onClick={goToTop}
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-600 bg-gray-700 text-sm font-bold tracking-tight text-white shadow-sm transition-all hover:border-blue-400 hover:bg-blue-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-gray-800"
+            aria-label="Go to the top of the home page"
+            title="Back to top"
+          >
+            SM
+          </Link>
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="md:hidden text-white"
@@ -28,7 +44,7 @@ const Navigation = () => {
           </button>
         </div>
 
-        <div className={`${isOpen ? 'block' : 'hidden'} w-full md:flex md:items-center md:w-auto`}>
+        <div className={`${isOpen ? 'block' : 'hidden'} w-full md:flex md:flex-1 md:items-center md:justify-end`}>
           <ul className="links flex flex-col items-center md:flex-row md:space-x-4 mb-4 md:mb-0 md:items-start">
             <li>
               <Link to="/" onClick={() => setIsOpen(false)} className="block px-4 py-2 hover:text-blue-400 transition-colors">About Me</Link>

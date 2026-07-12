@@ -4,6 +4,15 @@ import { Briefcase } from 'lucide-react';
 const WorkExperience = () => {
   const experiences = [
     {
+      title: 'Computer Vision Intern',
+      company: 'VERIFAIT · Internship',
+      period: 'June 22, 2026 – Sep. 15, 2026',
+      location: 'Madrid, Spain',
+      description: 'Working on NITID, a project focused on commercializing the D-FINE object detection model as a solution similar to Ultralytics YOLO.',
+      titleLink: 'https://www.linkedin.com/company/verifait/',
+      companyLink: 'https://www.linkedin.com/company/verifait/'
+    },
+    {
       title: 'Adjunct Lecturer',
       company: 'Department of Computer Science Engineering, BRAC University',
       period: 'Feb. 2025 – June 2025',
@@ -39,11 +48,24 @@ const WorkExperience = () => {
           <div key={index} className="relative pl-8 pb-6 border-l-2 border-gray-300 last:border-l-0 last:pb-0">
             <div className="absolute w-4 h-4 bg-blue-600 rounded-full -left-[9px] top-0"></div>
             <div className="bg-gray-50 p-4 rounded-lg shadow-sm hover:shadow-md transition-all duration-300">
-              <h3 className="font-bold text-gray-800">{experience.title}</h3>
+              <h3 className="font-bold text-gray-800">
+                {experience.titleLink ? (
+                  <a href={experience.titleLink} target="_blank" rel="noopener noreferrer" className="text-gray-800 hover:text-blue-600">
+                    {experience.title}
+                  </a>
+                ) : experience.title}
+              </h3>
               <div className="flex flex-col sm:flex-row sm:justify-between mt-1">
-                <p className="text-gray-600 font-medium">{experience.company}</p>
+                <p className="text-gray-600 font-medium">
+                  {experience.companyLink ? (
+                    <a href={experience.companyLink} target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-600">
+                      {experience.company}
+                    </a>
+                  ) : experience.company}
+                </p>
                 <p className="text-gray-500 italic mt-1 sm:mt-0">{experience.period}</p>
               </div>
+              {experience.location && <p className="mt-1 text-sm text-gray-500">{experience.location}</p>}
               <p className="mt-3 text-gray-700">{experience.description}</p>
               {experience.link && (
                 <a 

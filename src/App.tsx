@@ -20,6 +20,7 @@ import Projects from './components/Projects';
 import LifeUpdates from './components/LifeUpdates';
 import HobbiesMusic from './components/HobbiesMusic'; 
 import ContactMe from './components/ContactMe';
+import HomeSectionNavigation from './components/HomeSectionNavigation';
 
 import ScrollToTop from './components/ScrollToTop';
 
@@ -37,19 +38,18 @@ function App() {
           <Routes>
             <Route path="/" element={
               <div id="main">
-                <Header />
-                <AboutMe />
-                <Education />
-                <WorkExperience />
-                <Achievements />
-                <ResearchInterests />
-                <ResearchObjective />
-                <ExtraCurricular />
-                <TechnicalSkills />
-                <TestScores />
-                <Certifications />  
-                <EducationHistory />
-                <CV />
+                <div id="about" className="scroll-target"><Header /><AboutMe /></div>
+                <HomeSectionNavigation />
+                <div id="education" className="scroll-target"><Education /></div>
+                <div id="experience" className="scroll-target"><WorkExperience /></div>
+                <div id="awards" className="scroll-target"><Achievements /></div>
+                <div id="research" className="scroll-target"><ResearchInterests /><ResearchObjective /></div>
+                <div id="activities" className="scroll-target"><ExtraCurricular /></div>
+                <div id="skills" className="scroll-target"><TechnicalSkills /></div>
+                <div id="scores" className="scroll-target"><TestScores /></div>
+                <div id="certifications" className="scroll-target"><Certifications /></div>
+                <div id="history" className="scroll-target"><EducationHistory /></div>
+                <div id="cv" className="scroll-target"><CV /></div>
               </div>
             } />
             <Route path="/projects" element={<Projects />} />

@@ -77,3 +77,11 @@ a {
 a:hover {
   color: #2563eb;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+.scroll-target {
+  scroll-margin-top: 6rem;
+}
