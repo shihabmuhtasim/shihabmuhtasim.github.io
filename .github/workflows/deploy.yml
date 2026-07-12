@@ -21,6 +21,10 @@ jobs:
       # native binaries. Remove it so the Linux runner gets the right packages.
       - run: rm -rf node_modules && npm install
 
+      # npm can still omit this optional package when the lockfile originated
+      # on macOS (npm/cli#4828), so install the runner's Rollup binary directly.
+      - run: npm install --no-save @rollup/rollup-linux-x64-gnu@4.40.1
+
       - run: npm run build
 
       - uses: JamesIves/github-pages-deploy-action@v4
