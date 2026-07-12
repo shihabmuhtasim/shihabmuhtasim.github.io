@@ -17,11 +17,9 @@ jobs:
         with:
           node-version: 20
 
-      - run: npm install
-
-      # package-lock.json was generated on macOS, so npm can omit Rollup's
-      # Linux native optional package on the GitHub Actions runner.
-      - run: npm install --no-save @rollup/rollup-linux-x64-gnu@4.40.1
+      # node_modules is tracked in this legacy repository and contains macOS
+      # native binaries. Remove it so the Linux runner gets the right packages.
+      - run: rm -rf node_modules && npm install
 
       - run: npm run build
 
