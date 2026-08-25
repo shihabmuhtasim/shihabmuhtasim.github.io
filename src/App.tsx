@@ -17,7 +17,6 @@ import Footer from './components/Footer';
 import ResearchObjective from './components/ResearchObjective';
 import CV from './components/CV';
 import Projects from './components/Projects';
-import LifeUpdates from './components/LifeUpdates';
 import HobbiesMusic from './components/HobbiesMusic'; 
 import ContactMe from './components/ContactMe';
 import HomeSectionNavigation from './components/HomeSectionNavigation';
@@ -30,14 +29,15 @@ function App() {
   return (
     <Router>
       <ScrollToTop />
-      <div className="min-h-screen bg-gray-100">
+      <div className="site-shell min-h-screen">
         <div id="wrapper" className="fade-in">
-          <Intro />
           <Navigation />
           
           <Routes>
             <Route path="/" element={
-              <div id="main">
+              <>
+              <Intro />
+              <main id="main" className="home-main">
                 <div id="about" className="scroll-target"><Header /><AboutMe /></div>
                 <HomeSectionNavigation />
                 <div id="education" className="scroll-target"><Education /></div>
@@ -50,14 +50,13 @@ function App() {
                 <div id="certifications" className="scroll-target"><Certifications /></div>
                 <div id="history" className="scroll-target"><EducationHistory /></div>
                 <div id="cv" className="scroll-target"><CV /></div>
-              </div>
+              </main>
+              </>
             } />
-            <Route path="/projects" element={<Projects />} />
+            <Route path="/projects" element={<main className="route-page"><Projects /></main>} />
 
-            <Route path="/LifeUpdates" element={<LifeUpdates/>} />
-
-            <Route path="/hobbies-music" element={<HobbiesMusic />} />
-            <Route path="/contact-me" element={<ContactMe />} />
+            <Route path="/hobbies-music" element={<main className="route-page"><HobbiesMusic /></main>} />
+            <Route path="/contact-me" element={<main className="route-page"><ContactMe /></main>} />
           </Routes>
           
           <Footer />

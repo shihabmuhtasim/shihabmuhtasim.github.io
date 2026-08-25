@@ -20,14 +20,14 @@ const HomeSectionNavigation = () => {
   };
 
   return (
-    <nav aria-label="Home page sections" className="mb-8 rounded-xl border border-gray-200 bg-white p-5 shadow-sm sm:p-6">
-      <div className="flex flex-wrap justify-center gap-2">
+    <nav aria-label="Home page sections" className="section-jump-nav">
+      <div className="section-jump-track">
         {sections.map(([id, label]) => (
           <button
             key={id}
             type="button"
             onClick={() => goToSection(id)}
-            className="rounded-full border border-gray-200 bg-white px-4 py-2 text-sm font-semibold text-gray-600 shadow-sm transition-all duration-200 hover:border-blue-500 hover:bg-blue-600 hover:text-white hover:shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            className="section-jump-button"
           >
             {label}
           </button>

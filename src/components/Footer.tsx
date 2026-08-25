@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapPin, Mail, Linkedin, Github, FileText } from 'lucide-react';
+import { MapPin, Linkedin, Github } from 'lucide-react';
 import { FaHackerrank, FaAddressBook } from 'react-icons/fa';
 
 const Footer = () => {
@@ -19,7 +19,7 @@ const Footer = () => {
             <h3 className="text-xl font-bold mb-4 border-b border-gray-700 pb-2">Address</h3>
             <p className="flex items-center">
               <MapPin className="w-5 h-5 mr-2 text-blue-400" />
-              Bangladesh
+              Bordeaux, France
             </p>
           </div>
           

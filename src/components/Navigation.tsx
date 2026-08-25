@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Linkedin, Github, Menu, X } from 'lucide-react';
-import { FaHackerrank, FaAddressBook } from 'react-icons/fa';
+import { Github, Linkedin, Menu, X } from 'lucide-react';
 import { useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 
@@ -9,6 +8,7 @@ const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const location = useLocation();
+  const isActive = (path: string) => location.pathname === path;
 
   useEffect(() => {
     setIsOpen(false); // Close dropdown menu on route change
@@ -23,68 +23,55 @@ const Navigation = () => {
   };
 
   return (
-    <nav id="nav" className="bg-gray-800 text-white p-4 sticky top-0 z-10 shadow-md">
-      <div className="container mx-auto flex flex-wrap items-center justify-between gap-2">
-        <div className="flex justify-between w-full md:w-auto items-center">
+    <nav id="nav" className="site-nav">
+      <div className="site-nav-inner">
+        <div className="site-brand-row">
           <Link
             to="/"
             onClick={goToTop}
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-600 bg-gray-700 text-sm font-bold tracking-tight text-white shadow-sm transition-all hover:border-blue-400 hover:bg-blue-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-gray-800"
+            className="site-brand"
             aria-label="Go to the top of the home page"
             title="Back to top"
           >
-            SM
+            <span>SM</span>
+            <span className="site-brand-label">Shihab Muhtasim</span>
           </Link>
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-white"
+            className="mobile-menu-button md:hidden"
             aria-label="Toggle menu"
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
 
-        <div className={`${isOpen ? 'block' : 'hidden'} w-full md:flex md:flex-1 md:items-center md:justify-end`}>
-          <ul className="links flex flex-col items-center md:flex-row md:space-x-4 mb-4 md:mb-0 md:items-start">
+        <div className={`${isOpen ? 'nav-open' : ''} site-nav-menu`}>
+          <ul className="site-links">
             <li>
-              <Link to="/" onClick={() => setIsOpen(false)} className="block px-4 py-2 hover:text-blue-400 transition-colors">About Me</Link>
+              <Link to="/" onClick={() => setIsOpen(false)} className={isActive('/') ? 'active' : ''}>About</Link>
             </li>
             <li>
-              <Link to="/projects" onClick={() => setIsOpen(false)} className="block px-4 py-2 hover:text-blue-400 transition-colors">My Projects</Link>
+              <Link to="/projects" onClick={() => setIsOpen(false)} className={isActive('/projects') ? 'active' : ''}>Projects</Link>
             </li>
             <li>
-              <Link to="/LifeUpdates" onClick={() => setIsOpen(false)} className="block px-4 py-2 hover:text-blue-400 transition-colors">Life Updates</Link>
-            </li>
-
-            <li>
-              <Link to="/hobbies-music" onClick={() => setIsOpen(false)} className="block px-4 py-2 hover:text-blue-400 transition-colors">Hobby</Link>
+              <Link to="/hobbies-music" onClick={() => setIsOpen(false)} className={isActive('/hobbies-music') ? 'active' : ''}>Hobby</Link>
             </li>
             <li>
-              <Link to="/contact-me" onClick={() => setIsOpen(false)} className="block px-4 py-2 hover:text-blue-400 transition-colors">Contact Me</Link>
+              <Link to="/contact-me" onClick={() => setIsOpen(false)} className={isActive('/contact-me') ? 'active contact-link' : 'contact-link'}>Contact</Link>
             </li>
           </ul>
-          <ul className="icons flex flex-col items-center md:flex-row md:space-x-4">
+          <ul className="site-socials">
             <li>
-              <a href="https://www.linkedin.com/in/shihabmuhtasim/" className="block px-4 py-2 hover:text-blue-400 transition-colors" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/in/shihabmuhtasim/" aria-label="LinkedIn" target="_blank" rel="noreferrer">
                 <Linkedin className="w-5 h-5" />
               </a>
             </li>
             <li>
-              <a href="https://github.com/shihabmuhtasim" className="block px-4 py-2 hover:text-blue-400 transition-colors" aria-label="GitHub">
+              <a href="https://github.com/shihabmuhtasim" aria-label="GitHub" target="_blank" rel="noreferrer">
                 <Github className="w-5 h-5" />
               </a>
             </li>
             
-            <li>
-              <a href="https://www.hackerrank.com/profile/shihabmuhtasim" className="block px-4 py-2 hover:text-blue-400 transition-colors" aria-label="HackerRank">
-                <FaHackerrank className="w-5 h-5" />
-              </a>
-            </li>
-            <li>
-              <a href="https://sayhi.bio/Shihab-Muhtasim" className="block px-4 py-2 hover:text-blue-400 transition-colors" aria-label="Say Hi Contact Info">
-                <FaAddressBook className="w-5 h-5" />
-              </a>
-            </li>
           </ul>
         </div>
       </div>
