@@ -8,7 +8,7 @@ const WorkExperience = () => {
       company: 'VERIFAIT · Internship',
       period: 'June 22, 2026 – Sep. 15, 2026',
       location: 'Madrid, Spain',
-      description: 'Working on NITID, a project focused on commercializing the D-FINE object detection model as a solution similar to Ultralytics YOLO.',
+      description: 'Developed Knitted, a product that makes D-FINE models easier to use for computer vision tasks. Built its browser-based website for running computer vision tools and presenting the product, along with Knitted Studio, a desktop application for object detection in images and videos.',
       titleLink: 'https://www.linkedin.com/company/verifait/',
       companyLink: 'https://www.linkedin.com/company/verifait/'
     },

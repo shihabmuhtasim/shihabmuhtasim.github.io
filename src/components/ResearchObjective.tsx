@@ -12,10 +12,10 @@ const ResearchProjects = () => {
   const projects: ResearchProject[] = [
     {
       title:
-        'Review & Evaluation of State-of-the-Art 3D Reconstruction based on NeRFs',
+        'Evaluation and Improvement of 3D Reconstruction Using NeRF and Gaussian Splatting',
       date: 'Jan 2026 – Current',
       description:
-        'Tutored research development project on Neural Radiance Fields (NeRFs): surveying NeRF-based methods, implementing and experimenting on suitable datasets, and analyzing performance to support benchmarking and reproducible research (with potential extensions for improvements).',
+        'Evaluating NeRF and Gaussian Splatting methods—including Instant-NGP and Vanilla Gaussian Splatting—across datasets, scenes, and viewing conditions. Current work focuses on improving DirectFisheye-GS for sparse fisheye views and creating a custom drone dataset.',
     },
     {
       title:
