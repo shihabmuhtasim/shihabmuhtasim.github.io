@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ExternalLink, Code } from 'lucide-react';
 
-type CategoryKey = 'all' | 'cv' | '3d' | 'ml' | 'se';
+type CategoryKey = 'all' | 'cv' | 'ml' | 'se';
 
 interface Project {
   categoryKey: CategoryKey;
@@ -27,8 +27,8 @@ const projects: Project[] = [
     websiteUrl: 'https://nitid-website.nitid-vaelsys.workers.dev/',
   },
   {
-    categoryKey: '3d',
-    categoryLabel: '3D Reconstruction Research',
+    categoryKey: 'cv',
+    categoryLabel: 'Computer Vision',
     title: 'NeRF & Gaussian Splatting for 3D Reconstruction',
     description:
       'Compared NeRF and Gaussian Splatting for novel view synthesis across scenes and viewing conditions, analyzing architectures, reconstruction failures, and possible solutions. Ongoing research investigates improvements to sparse-view fisheye scene reconstruction using DirectFisheye-GS.',
@@ -216,14 +216,12 @@ const projects: Project[] = [
 const TABS: { key: CategoryKey; label: string; dot: string }[] = [
   { key: 'all', label: 'All',                   dot: '' },
   { key: 'cv',  label: 'Computer Vision',        dot: 'bg-violet-500' },
-  { key: '3d',  label: '3D Reconstruction Research', dot: 'bg-violet-500' },
   { key: 'ml',  label: 'ML & Data Science',      dot: 'bg-emerald-500' },
   { key: 'se',  label: 'Software Engineering',   dot: 'bg-blue-500' },
 ];
 
 function getActiveTabClass(key: CategoryKey): string {
   switch (key) {
-    case '3d':
     case 'cv':  return 'bg-violet-600  text-white border-violet-600  shadow-lg shadow-violet-900/30';
     case 'ml':  return 'bg-emerald-600 text-white border-emerald-600 shadow-lg shadow-emerald-900/30';
     case 'se':  return 'bg-blue-600    text-white border-blue-600    shadow-lg shadow-blue-900/30';
@@ -233,7 +231,6 @@ function getActiveTabClass(key: CategoryKey): string {
 
 function getTagClass(key: CategoryKey): string {
   switch (key) {
-    case '3d':
     case 'cv':  return 'bg-violet-100  text-violet-700  border border-violet-200';
     case 'ml':  return 'bg-emerald-100 text-emerald-700 border border-emerald-200';
     case 'se':  return 'bg-blue-100    text-blue-700    border border-blue-200';
@@ -243,7 +240,6 @@ function getTagClass(key: CategoryKey): string {
 
 function getLinkClass(key: CategoryKey): string {
   switch (key) {
-    case '3d':
     case 'cv':  return 'text-violet-600  hover:text-violet-800';
     case 'ml':  return 'text-emerald-600 hover:text-emerald-800';
     case 'se':  return 'text-blue-600    hover:text-blue-800';
@@ -253,7 +249,6 @@ function getLinkClass(key: CategoryKey): string {
 
 function getCardAccentClass(key: CategoryKey): string {
   switch (key) {
-    case '3d':
     case 'cv':  return 'hover:border-violet-200  hover:shadow-violet-100/50';
     case 'ml':  return 'hover:border-emerald-200 hover:shadow-emerald-100/50';
     case 'se':  return 'hover:border-blue-200    hover:shadow-blue-100/50';
@@ -272,7 +267,7 @@ const Projects = () => {
 
   const filtered = activeCategory === 'all'
     ? projects
-    : projects.filter(p => p.categoryKey === activeCategory || (activeCategory === 'cv' && p.categoryKey === '3d'));
+    : projects.filter(p => p.categoryKey === activeCategory);
 
   return (
     <section className="bg-gray-100 py-14 min-h-screen">
