@@ -3,7 +3,7 @@ import { FileText, Download } from 'lucide-react';
 
 const CV = () => {
   const handleViewCV = () => {
-    window.open('/Cv_JUN_26.pdf', '_blank');
+    window.open('/SHIHAB_CV.pdf', '_blank', 'noopener,noreferrer');
   };
 
   return (
@@ -18,10 +18,10 @@ const CV = () => {
           className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-md transition-colors duration-300 transform hover:scale-105"
         >
           <FileText className="w-4 h-4" />
-          View CV — June 2026
+          View Latest CV
         </button>
         <a
-          href="/Cv_JUN_26.pdf"
+          href="/SHIHAB_CV.pdf"
           download="Resume_Shihab_Muhtasim_2026.pdf"
           className="inline-flex items-center gap-2 bg-transparent border-2 border-blue-600 hover:bg-blue-50 text-blue-600 font-bold py-3 px-6 rounded-md transition-colors duration-300 transform hover:scale-105"
         >

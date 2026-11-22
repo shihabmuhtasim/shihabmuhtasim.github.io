@@ -5,12 +5,16 @@ const WorkExperience = () => {
   const experiences = [
     {
       title: 'Computer Vision Intern',
-      company: 'VERIFAIT · Internship',
-      period: 'June 22, 2026 – Sep. 15, 2026',
+      company: 'Valesys Digital Architects · Internship',
+      period: 'Jun. 2026 – Sep. 2026',
       location: 'Madrid, Spain',
-      description: 'Developed NITID, a product that makes D-FINE models easier to use for computer vision tasks. Built its browser-based website for running computer vision tools and presenting the product, along with NITIDSTUDIO, a desktop application for object detection in images and videos.',
-      titleLink: 'https://www.linkedin.com/company/verifait/',
-      companyLink: 'https://www.linkedin.com/company/verifait/'
+      description: 'Developed NITID, an open-source computer vision ecosystem built around D-FINE object detectors, with model wrappers, training and evaluation tools, and model export for deployment. Built NITID Studio, macOS software for local batch object detection in images and videos using D-FINE inference. Developed the NITID website and CVLabs so users can try computer vision models and tasks in the browser.',
+      titleLink: 'https://valesys.io/',
+      companyLink: 'https://valesys.io/',
+      projectLinks: [
+        { label: 'Project website', url: 'https://nitid-website.nitid-vaelsys.workers.dev/' },
+        { label: 'NITID on GitHub', url: 'https://github.com/shihabmuhtasim/nitid' },
+      ],
     },
     {
       title: 'Adjunct Lecturer',
@@ -67,6 +71,15 @@ const WorkExperience = () => {
               </div>
               {experience.location && <p className="mt-1 text-sm text-gray-500">{experience.location}</p>}
               <p className="mt-3 text-gray-700">{experience.description}</p>
+              {experience.projectLinks && (
+                <div className="mt-3 flex flex-wrap gap-x-5 gap-y-2">
+                  {experience.projectLinks.map((link) => (
+                    <a key={link.url} href={link.url} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 transition-colors">
+                      {link.label}
+                    </a>
+                  ))}
+                </div>
+              )}
               {experience.link && (
                 <a 
                   href={experience.link} 

@@ -6,16 +6,25 @@ type ResearchProject = {
   date: string;
   description: string;
   link?: string;
+  codeLink?: string;
 };
 
 const ResearchProjects = () => {
   const projects: ResearchProject[] = [
     {
       title:
-        'Evaluation and Improvement of 3D Reconstruction Using NeRF and Gaussian Splatting',
-      date: 'Jan 2026 – Current',
+        'NeRF & Gaussian Splatting for 3D Reconstruction',
+      date: 'Jan. 2026 – Present',
       description:
-        'Evaluating NeRF and Gaussian Splatting methods—including Instant-NGP and Vanilla Gaussian Splatting—across datasets, scenes, and viewing conditions. Current work focuses on improving DirectFisheye-GS for sparse fisheye views and creating a custom drone dataset.',
+        'Compared and analyzed NeRF and Gaussian Splatting across scenes and viewing conditions for novel view synthesis, examining their architectures, failure modes, and possible solutions. Current research focuses on improving sparse-view fisheye scene reconstruction with Gaussian Splatting using DirectFisheye-GS.',
+      link: 'https://drive.google.com/file/d/1Vn6qirAhY6YF5vYD2lOC8Ytt2T2Bky8o/view?usp=sharing',
+      codeLink: 'https://github.com/shihabmuhtasim/SPARSE_VIEW_FISHEYE_GS',
+    },
+    {
+      title: 'CLIP Spatial Reasoning: Explainability & Failure Analysis',
+      date: 'Feb. 2026 – May 2026',
+      description: 'Investigated CLIP ViT-B/32 on the Visual Spatial Reasoning benchmark through seven experiments using Grad-CAM, text-embedding analysis, and comparison with BLIP. Analyzed model errors and positional shortcuts to examine how image and text representations affect spatial-relation predictions.',
+      codeLink: 'https://github.com/shihabmuhtasim/CLIP-Spatial-Reasoning-Explainability-and-Failure-Analysis',
     },
     {
       title:
@@ -67,7 +76,13 @@ const ResearchProjects = () => {
                     rel="noreferrer"
                     className="inline-flex items-center text-blue-700 hover:text-blue-800 font-medium"
                   >
-                    View link
+                    {p.codeLink ? 'View report' : 'View link'}
+                    <ExternalLink className="w-4 h-4 ml-1" />
+                  </a>
+                )}
+                {p.codeLink && (
+                  <a href={p.codeLink} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-blue-700 hover:text-blue-800 font-medium">
+                    View code
                     <ExternalLink className="w-4 h-4 ml-1" />
                   </a>
                 )}

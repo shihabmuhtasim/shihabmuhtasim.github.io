@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ExternalLink, Code } from 'lucide-react';
 
-type CategoryKey = 'all' | 'cv' | 'ml' | 'se';
+type CategoryKey = 'all' | 'cv' | '3d' | 'ml' | 'se';
 
 interface Project {
   categoryKey: CategoryKey;
@@ -10,10 +10,30 @@ interface Project {
   description: string;
   imageUrl: string;
   githubUrl: string;
+  websiteUrl?: string;
 }
 
 const projects: Project[] = [
   // ── Computer Vision & Image Processing ──
+  {
+    categoryKey: 'cv',
+    categoryLabel: 'Computer Vision',
+    title: 'NITID — Computer Vision Ecosystem',
+    description:
+      'Developed three connected tools: NITID, an open-source D-FINE toolkit with model wrappers, training, evaluation, and deployment export; NITID Studio, a macOS application for local batch object detection in images and videos; and the NITID website with CVLabs for trying computer vision models and tasks in the browser.',
+    imageUrl: '/nitid-cover.svg',
+    githubUrl: 'https://github.com/shihabmuhtasim/nitid',
+    websiteUrl: 'https://nitid-website.nitid-vaelsys.workers.dev/',
+  },
+  {
+    categoryKey: '3d',
+    categoryLabel: '3D Reconstruction Research',
+    title: 'NeRF & Gaussian Splatting for 3D Reconstruction',
+    description:
+      'Compared NeRF and Gaussian Splatting for novel view synthesis across scenes and viewing conditions, analyzing architectures, reconstruction failures, and possible solutions. Ongoing research investigates improvements to sparse-view fisheye scene reconstruction using DirectFisheye-GS.',
+    imageUrl: '/3d-recon-cover.svg',
+    githubUrl: 'https://github.com/shihabmuhtasim/SPARSE_VIEW_FISHEYE_GS',
+  },
   {
     categoryKey: 'cv',
     categoryLabel: 'Computer Vision',
@@ -28,7 +48,7 @@ const projects: Project[] = [
     categoryLabel: 'Computer Vision',
     title: 'CLIP Spatial Reasoning — Explainability & Failure Analysis',
     description:
-      'Investigated spatial reasoning failures in CLIP ViT-B/32 through seven structured experiments on the Visual Spatial Reasoning dataset. Used Grad-CAM attribution, layer-wise text embedding analysis, and comparative evaluation against BLIP to identify and taxonomize systematic failure modes.',
+      'Investigated CLIP ViT-B/32 on the Visual Spatial Reasoning benchmark through seven experiments using Grad-CAM, text-embedding analysis, and comparison with BLIP. Analyzed model errors and positional shortcuts to examine how image and text representations affect spatial-relation predictions.',
     imageUrl: '/flip-cover.svg',
     githubUrl: 'https://github.com/shihabmuhtasim/CLIP-Spatial-Reasoning-Explainability-and-Failure-Analysis',
   },
@@ -194,12 +214,14 @@ const projects: Project[] = [
 const TABS: { key: CategoryKey; label: string; dot: string }[] = [
   { key: 'all', label: 'All',                   dot: '' },
   { key: 'cv',  label: 'Computer Vision',        dot: 'bg-violet-500' },
+  { key: '3d',  label: '3D Reconstruction Research', dot: 'bg-violet-500' },
   { key: 'ml',  label: 'ML & Data Science',      dot: 'bg-emerald-500' },
   { key: 'se',  label: 'Software Engineering',   dot: 'bg-blue-500' },
 ];
 
 function getActiveTabClass(key: CategoryKey): string {
   switch (key) {
+    case '3d':
     case 'cv':  return 'bg-violet-600  text-white border-violet-600  shadow-lg shadow-violet-900/30';
     case 'ml':  return 'bg-emerald-600 text-white border-emerald-600 shadow-lg shadow-emerald-900/30';
     case 'se':  return 'bg-blue-600    text-white border-blue-600    shadow-lg shadow-blue-900/30';
@@ -209,6 +231,7 @@ function getActiveTabClass(key: CategoryKey): string {
 
 function getTagClass(key: CategoryKey): string {
   switch (key) {
+    case '3d':
     case 'cv':  return 'bg-violet-100  text-violet-700  border border-violet-200';
     case 'ml':  return 'bg-emerald-100 text-emerald-700 border border-emerald-200';
     case 'se':  return 'bg-blue-100    text-blue-700    border border-blue-200';
@@ -218,6 +241,7 @@ function getTagClass(key: CategoryKey): string {
 
 function getLinkClass(key: CategoryKey): string {
   switch (key) {
+    case '3d':
     case 'cv':  return 'text-violet-600  hover:text-violet-800';
     case 'ml':  return 'text-emerald-600 hover:text-emerald-800';
     case 'se':  return 'text-blue-600    hover:text-blue-800';
@@ -227,6 +251,7 @@ function getLinkClass(key: CategoryKey): string {
 
 function getCardAccentClass(key: CategoryKey): string {
   switch (key) {
+    case '3d':
     case 'cv':  return 'hover:border-violet-200  hover:shadow-violet-100/50';
     case 'ml':  return 'hover:border-emerald-200 hover:shadow-emerald-100/50';
     case 'se':  return 'hover:border-blue-200    hover:shadow-blue-100/50';
@@ -245,7 +270,7 @@ const Projects = () => {
 
   const filtered = activeCategory === 'all'
     ? projects
-    : projects.filter(p => p.categoryKey === activeCategory);
+    : projects.filter(p => p.categoryKey === activeCategory || (activeCategory === 'cv' && p.categoryKey === '3d'));
 
   return (
     <section className="bg-gray-100 py-14 min-h-screen">
@@ -267,6 +292,7 @@ const Projects = () => {
               <button
                 key={tab.key}
                 onClick={() => handleCategoryChange(tab.key)}
+                aria-pressed={isActive}
                 className={[
                   'flex items-center gap-2 px-5 py-2 rounded-full text-sm font-semibold border transition-all duration-200',
                   isActive
@@ -339,6 +365,12 @@ const Projects = () => {
                   View Project
                   <ExternalLink className="w-3 h-3" />
                 </a>
+                {project.websiteUrl && (
+                  <a href={project.websiteUrl} target="_blank" rel="noopener noreferrer" className={`mt-3 inline-flex items-center gap-1.5 text-sm font-medium transition-colors ${getLinkClass(project.categoryKey)}`}>
+                    <ExternalLink className="w-3.5 h-3.5" />
+                    Project website
+                  </a>
+                )}
               </div>
             </div>
           ))}
