@@ -9,6 +9,7 @@ interface Project {
   title: string;
   description: string;
   imageUrl: string;
+  containImage?: boolean;
   githubUrl: string;
   websiteUrl?: string;
 }
@@ -31,7 +32,8 @@ const projects: Project[] = [
     title: 'NeRF & Gaussian Splatting for 3D Reconstruction',
     description:
       'Compared NeRF and Gaussian Splatting for novel view synthesis across scenes and viewing conditions, analyzing architectures, reconstruction failures, and possible solutions. Ongoing research investigates improvements to sparse-view fisheye scene reconstruction using DirectFisheye-GS.',
-    imageUrl: '/3d-recon-cover.svg',
+    imageUrl: '/nerf-lego.png',
+    containImage: true,
     githubUrl: 'https://github.com/shihabmuhtasim/SPARSE_VIEW_FISHEYE_GS',
   },
   {
@@ -329,7 +331,7 @@ const Projects = () => {
                 <img
                   src={project.imageUrl}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                  className={project.containImage ? 'w-full h-full object-contain bg-white p-3' : 'w-full h-full object-cover transition-transform duration-500 hover:scale-105'}
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
                     target.style.display = 'none';
